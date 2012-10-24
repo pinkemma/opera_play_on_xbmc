@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" id="http://conditionpink.org/playonxbmc" 
+viewmodes="minimized" version="1.0"  xml:lang="en">
+  <name>Play on XBMC</name>
+  <name xml:lang="no">Spill av på XBMC</name>
+  
+  <author href="http://conditionpink.net" email="emma@conditionpink.net">Emma Vartdal</author>
+  
+  <description>Play youtube videos on a XBMC client</description>
+  <description xml:lang="no">Spill av youtube og vimeo videoer på en XBMC klient</description>
+  
+  <icon src="images/control_play.png"/>
+
+  <content src="index.html" type="text/html" encoding="utf-8"/>
+  
+  <preference name="xbmcServerHost" value="" readonly="false" />
+  <preference name="xbmcServerPort" value="8080" readonly="false" />
+  <preference name="xbmcServerUser" value="xbmc" readonly="false" />
+  <preference name="xbmcServerPassword" value="" readonly="false" />
+
+<access origin="*"/>
+</widget>

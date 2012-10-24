@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Play on XBMC options</title>
+  
+ 
+<script>
+window.addEventListener( 'DOMContentLoaded', function() {
+	if (widget.preferences.backgroundColor && widget.preferences.font ) {
+		document.body.style.backgroundColor = widget.preferences.backgroundColor;
+		document.querySelector( 'h1' ).style.fontFamily = widget.preferences.font;
+	}
+}, false );
+</script>
+  <style>
+  h1 {
+    text-align: center; 	
+  }
+  body {
+	background: #e0e0e0;
+	font-family: "Calibri";
+  }
+  #wrapper {
+  width: 50%;
+	margin: 0px auto;	
+  }
+  #content {
+	background: white;
+	border: 1px solid black;
+	border-radius: 8px;
+	
+  }
+  
+  ul {
+	margin: 10px;
+	padding: 0px;
+	}
+  
+  li {
+	padding-bottom: 5px;
+	list-style: none;
+  }
+
+  li label {
+	width: 50%;
+	display: block;
+	float: left;
+  }
+  
+  li input {
+	
+  }
+  </style>
+ </head>
+ <body>
+ 
+ <div id="wrapper"> 
+ <h1>Play on XBMC options</h1> 
+ <form>
+<div id="content"> 
+ <ul>
+   <li>
+     <label for="xbmcServerHost">Server IP or hostname</label>
+	 <input  id="xbmcServerHost"  name ="xbmcServerHost" />
+   </li>
+   <li>
+     <label for="xbmcServerPort">Port</label>
+     <input id="xbmcServerPort" name ="xbmcServerPort" value="" />
+   </li>
+   
+   <li>
+     <label for="xbmcServerUser">Username</label>
+     <input id="xbmcServerUser" name ="xbmcServerUser"></input>
+   </li>
+   
+   <li>
+     <label for="xbmcServerPassword">Password</label>
+     <input id="xbmcServerPassword" type="password" name="xbmcServerPassword"></input>
+   </li>
+ </ul>
+ </div>
+ </form> 
+ </div>
+ 
+ <script>
+var xbmcServerHost = document.getElementById( 'xbmcServerHost' );
+var xbmcServerPort = document.getElementById( 'xbmcServerPort' );
+var xbmcServerUser = document.getElementById( 'xbmcServerUser' );
+var xbmcServerPassword = document.getElementById( 'xbmcServerPassword' );
+
+xbmcServerHost.value = widget.preferences.getItem("xbmcServerHost");
+xbmcServerPort.value = widget.preferences.getItem("xbmcServerPort");
+xbmcServerUser.value = widget.preferences.getItem("xbmcServerUser");
+xbmcServerPassword.value = widget.preferences.getItem("xbmcServerPassword");
+
+xbmcServerHost.addEventListener( 'change', function() {
+	widget.preferences.setItem("xbmcServerHost", this.value);	
+}, false );
+
+xbmcServerPort.addEventListener( 'change', function() {
+	widget.preferences.setItem("xbmcServerPort", this.value);	
+}, false );
+
+xbmcServerUser.addEventListener( 'change', function() {
+	widget.preferences.setItem("xbmcServerUser", this.value);	
+}, false );
+
+xbmcServerPassword.addEventListener( 'change', function() {
+	widget.preferences.setItem("xbmcServerPassword", this.value);	
+}, false );
+
+</script>
+
+ </body>
+</html>
